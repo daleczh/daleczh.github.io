@@ -12,3 +12,21 @@ h2 {
     font-size: 25px;
     color:cornflowerblue;
 }
+
+.pub {
+    color:mediumslateblue;
+    font-weight: bold;
+}
+
+.stress {
+    color:firebrick;
+    font-weight: bold;
+}
+
+a:link {
+    color:deepskyblue;
+}
+
+a:visited {
+    color:royalblue;
+}
