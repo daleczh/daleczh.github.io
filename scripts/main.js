@@ -7,7 +7,7 @@ function setUserName() {
     }
     else {
         // localStorage.setItem('name', name);
-        heading.textContent = 'Zhaohua CHEN welcomes ' +  name;
+        heading.textContent = heading.textContent + ' welcomes ' +  name;
     }
 }
 
