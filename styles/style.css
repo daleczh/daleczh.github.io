@@ -23,10 +23,39 @@ h2 {
     font-weight: bold;
 }
 
+figcaption {
+    text-align: center;
+}
+
 a:link {
     color:deepskyblue;
 }
 
 a:visited {
     color:royalblue;
+}
+
+nav ul.main-nav {    
+    margin: 0;
+    padding: 0;
+}
+
+nav ul.main-nav li {
+    float: left;
+    list-style: none;
+    width: 250px;
+}
+
+nav ul.main-nav li ul.sub-nav li{
+    list-style: disc;
+    display: none;
+}
+
+nav ul.main-nav li:hover ul.sub-nav li{
+    list-style: disc;
+    display: block;
+}
+
+div.end-nav {
+    clear: left;
 }

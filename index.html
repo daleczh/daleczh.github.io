@@ -18,27 +18,35 @@
 <body>
     <button>Your name</button>
 
-    <figure style="float:right; margin: 20px;">
-        <img src="images/my-photo.jpeg"
-            alt="Zhaohua Chen's photo"           
-            width="400">
-        <figcaption>Taken when I was getting my bachelor degree.</figcaption>
-    </figure>
-
     <header>
         <h1>Zhaohua Chen</h1>
-    </header>
-        
+    </header>   
+
+    <figure style="float:right; margin: 20px; margin-top: 0px;">
+        <img src="images/my-photo.jpeg"
+            alt="Zhaohua Chen's photo"           
+            width="360">
+        <figcaption>Taken when I was <br />getting my bachelor degree.</figcaption>
+    </figure>
+
     <nav>
-        <a href="#Minimum-About-Me">Minimum About Me</a><br />
-        <a href="#Research-Interests">Research Interests</a><br />
-        <a href="#Publications">Publications</a><br />
-        <a href="#Professional-Services">Professional Services</a><br />
-        <a href="#More-About-Me">More About Me</a>   
-    </nav>   
-    <br />
+        <ul class="main-nav">
+            <li><a href="index.html">Main Page</a>
+                <ul class="sub-nav">
+                    <li><a href="#Minimum-About-Me">Minimum About Me</a></li>
+                    <li><a href="#Research-Interests">Research Interests</a></li>
+                    <li><a href="#Publications">Publications</a></li>
+                    <li><a href="#Professional-Services">Professional Services</a></li>
+                    <li><a href="#More-About-Me">More About Me</a></li>
+                </ul>
+            </li>
+            <li><a href="projects/index.html">Interesting Projects</a></li>
+        </ul>        
+    </nav>  
+    <div class="end-nav"></div> 
+    <br />   
         
-    <main>
+    <main>       
         <section>
             <header>
                 <h2 id="Minimum-About-Me">Minimum About Me</h2>
@@ -141,6 +149,10 @@
                 I indulge in billiards.
                 Billiards is like breath to me.
                 I am now in the billiards team of Peking University.
+            </p>
+            <p>
+                I also love snooker, of course. 
+                My favorite player is Kyren Wilson.
             </p>
             <p>
                 I am a super fan of SC30, KT11, and Golden State Warriors.
