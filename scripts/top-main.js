@@ -4,17 +4,17 @@ let buttonYourName = document.querySelector('div#hello-button');
 let yourName = localStorage.getItem('yourName');
 
 $(document).ready(function () {
-    $("div#hello-button").load("hello-button.html", function () {
+    $("div#hello-button").load("/hello-button.html", function () {
         buttonYourName = document.querySelector('div#hello-button');
     });
-    $("header#main-title").load("my-name.html", function () {
+    $("header#main-title").load("/my-name.html", function () {
         heading = document.querySelector('header#main-title h1');
         originalHeadingContext = heading.textContent;
         if (yourName !== null) {
             heading.textContent = originalHeadingContext + ' welcomes ' + yourName;
         }
     });
-    $("nav").load("index-navi.html");
+    $("nav").load("/navi.html");
 });
 
 function setUserName() {

@@ -4,17 +4,17 @@ let galleryButtonYourName = document.querySelector('div#hello-button');
 let yourName = localStorage.getItem('yourName');
 
 $(document).ready(function () {
-    $("div#hello-button").load("../../hello-button.html", function () {
+    $("div#hello-button").load("/hello-button.html", function () {
         galleryButtonYourName = document.querySelector('div#hello-button');
     });
-    $("header#main-title").load("../../my-name.html", function () {
+    $("header#main-title").load("/my-name.html", function () {
         galleryHeading = document.querySelector('header#main-title h1');
         galleryOriginalHeadingContext = galleryHeading.textContent;
         if (yourName !== null) {
             galleryHeading.textContent = galleryOriginalHeadingContext + ' welcomes ' + yourName + ' to his gallery!';
         }
     });
-    $("nav").load("../../src/other-navi.html");
+    $("nav").load("/navi.html");
 });
 
 function gallerySetUserName() {
