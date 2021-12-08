@@ -3,7 +3,20 @@ html {
     font-family: 'Cambay', sans-serif;
 }
 
-h1 {
+button {
+    font-size: 18px;
+    font-family: 'Cambay', sans-serif;
+    text-align: center;
+    background-color: rgb(109, 109, 209);
+    color: white;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-color: rgb(34, 21, 119);
+    border-radius: 2px;
+}
+
+header#main-title h1{
     font-size: 40px;
     text-align: center;
 }
@@ -11,6 +24,17 @@ h1 {
 h2 {
     font-size: 25px;
     color:cornflowerblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+section {
+    padding-bottom: 10px;
+}
+
+p {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .pub {
@@ -35,6 +59,10 @@ a:visited {
     color:royalblue;
 }
 
+nav {
+    font-size: 22px;
+}
+
 nav ul.main-nav {    
     margin: 0;
     padding: 0;
@@ -57,5 +85,7 @@ nav ul.main-nav li:hover ul.sub-nav li{
 }
 
 div.end-nav {
+    padding-top: 25px;
+    padding-bottom: 25px;
     clear: left;
 }

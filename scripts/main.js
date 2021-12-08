@@ -1,17 +1,34 @@
-let heading = document.querySelector('h1');
+let heading = document.querySelector('header#main-title h1');
+let originalHeadingContext = "";
+let buttonYourName = document.querySelector('div#hello-button');
+let yourName = localStorage.getItem('yourName');
+
+$(document).ready(function () {
+    $("div#hello-button").load("hello-button.html", function () {
+        buttonYourName = document.querySelector('div#hello-button');
+    });
+    $("header#main-title").load("my-name.html", function () {
+        heading = document.querySelector('header#main-title h1');
+        originalHeadingContext = heading.textContent;
+        if (yourName !== null) {
+            heading.textContent = originalHeadingContext + ' welcomes ' + yourName;
+        }
+    });
+    $("nav").load("index-navi.html");
+});
 
 function setUserName() {
-    let name = prompt('Please tell me your name:');
-    if (!name || name === null) {
-        setUserName();
+    heading = document.querySelector('header#main-title h1');
+    let yourName = prompt('Please tell me your name:');
+    if (!yourName || yourName === null) {
+        return;
     }
     else {
-        // localStorage.setItem('name', name);
-        heading.textContent = heading.textContent + ' welcomes ' +  name;
+        localStorage.setItem('yourName', yourName);
+        heading.textContent = originalHeadingContext + ' welcomes ' + yourName;
     }
 }
 
-let buttonYourName = document.querySelector('Button');
 buttonYourName.onclick = function () {
     setUserName();
 }

@@ -13,62 +13,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Cambay&display=swap" rel="stylesheet">
     <!--Thanks to Ayub Irawan for the cute icon!-->
     <link rel="icon" href="images/billiard-ball.png">
-    <script src="scripts/main.js" defer></script>
+
+    <!-- <script defer src="jQuery/jquery-3.6.0.min.js"></script> -->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="scripts/main.js"></script>
 </head>
 
 <body>
-    <button>Your name</button>
-
-    <header>
-        <h1>Zhaohua Chen</h1>
-    </header>   
+    <div id="hello-button"></div>
+    <header id="main-title"></header>
 
     <figure style="float:right; margin: 20px; margin-top: 0px;">
-        <img src="images/my-photo.jpeg"
-            alt="Zhaohua Chen's photo"           
-            width="360">
+        <img src="images/my-photo.jpeg" alt="Zhaohua Chen's photo" width="360">
         <figcaption>Taken when I was <br />getting my bachelor degree.</figcaption>
     </figure>
 
-    <nav>
-        <ul class="main-nav">
-            <li><a href="index.html">Home</a>
-                <ul class="sub-nav">
-                    <li><a href="#Minimum-About-Me">Minimum About Me</a></li>
-                    <li><a href="#Research-Interests">Research Interests</a></li>
-                    <li><a href="#Publications">Publications</a></li>
-                    <li><a href="#Professional-Services">Professional Services</a></li>
-                    <li><a href="#More-About-Me">More About Me</a></li>
-                </ul>
-            </li>
-            <li><a href="gallery/index.html">Gallery</a></li>
-        </ul>        
-    </nav>  
-    <div class="end-nav"></div> 
-    <br />   
-        
-    <main>       
+    <nav></nav>
+    <div class="end-nav"></div>
+
+    <main>
         <section>
             <header>
                 <h2 id="Minimum-About-Me">Minimum About Me</h2>
-            </header>            
+            </header>
             <p>
-                My name in simplified Chinese: 陈炤桦 (Chén Zhàohuà)
+                My name in simplified Chinese: 陈炤桦 (Chén Zhàohuà).
             </p>
             <p>
                 I am currently a first-year Ph.D candidate at
                 <a href="http://cfcs.pku.edu.cn/" target="_blank">Center on Frontiers of
                     Computing Studies (CFCS)</a>, Peking University,
-                advised by <a href="http://cfcs.pku.edu.cn/people/faculty/xiaotiedeng/index.htm" target="_blank">Prof. Xiaotie
+                advised by <a href="http://cfcs.pku.edu.cn/people/faculty/xiaotiedeng/index.htm" target="_blank">Prof.
+                    Xiaotie
                     Deng</a>. I received my BSc (Summa Cum Laude)
                 in artificial intelligence (Turing class) from Peking University, 2021.
             </p>
-            <br />
         </section>
         <section>
             <header>
                 <h2 id="Research-Interests">Research Interests</h2>
-            </header>            
+            </header>
             <p>
                 I am currently much interested in various subjects of theoretical computer science.
                 Specifically, I am fascinated by the field of game theory,
@@ -77,14 +61,14 @@
                 when I mainly focused on the application of game theory and mechanism design
                 in blockchain.
             </p>
-            <br />
         </section>
         <section>
             <header>
                 <h2 id="Publications">Publications</h2>
-            </header>            
+            </header>
             <p>
-                <strong class="pub">A Provable Softmax Reputation-based Protocol for Permissioned Blockchains</strong><br />
+                <strong class="pub">A Provable Softmax Reputation-based Protocol for Permissioned
+                    Blockchains</strong><br />
                 Hongyin Chen*, <strong class="pub">Zhaohua Chen</strong>*, Yukun Cheng, Xiaotie Deng,
                 Wenhan Huang, Jichen Li, Hongyi Ling* and Mengqian Zhang<br />
                 accepted to <strong class="pub">IEEE Transactions on Cloud Computing</strong><br />
@@ -92,7 +76,8 @@
                     10.1109/TCC.2021.3130244</a> (Early access)
             </p>
             <p>
-                <strong class="pub">Decentralized Asset Custody Scheme with Security against Rational Adversary</strong><br />
+                <strong class="pub">Decentralized Asset Custody Scheme with Security against Rational
+                    Adversary</strong><br />
                 <strong class="pub">Zhaohua Chen</strong> and Guang Yang<br />
                 accpted to <strong class="pub">WINE 2021</strong><br />
                 Arxiv: <a href="https://arxiv.org/pdf/2008.10895.pdf" target="_blank">
@@ -101,7 +86,8 @@
                     2020/1229</a>
             </p>
             <p>
-                <strong class="pub">On Tightness of the Tsaknakis-Spirakis Algorithm for Approximate Nash Equilibrium</strong><br />
+                <strong class="pub">On Tightness of the Tsaknakis-Spirakis Algorithm for Approximate Nash
+                    Equilibrium</strong><br />
                 <strong class="pub">Zhaohua Chen</strong>, Xiaotie Deng, Wenhan Huang, Hanyu Li* and Yuhao Li<br />
                 accepted to <strong class="pub">SAGT 2021</strong><br />
                 doi: <a href="https://doi.org/10.1007/978-3-030-85947-3_7" target="_blank">
@@ -110,7 +96,8 @@
                     2107.01471</a>
             </p>
             <p>
-                <strong class="pub">Poster: An Efficient Permissioned Blockchain Model with Provable Reputation Mechanism</strong><br />
+                <strong class="pub">Poster: An Efficient Permissioned Blockchain Model with Provable Reputation
+                    Mechanism</strong><br />
                 Hongyin Chen*, <strong class="pub">Zhaohua Chen</strong>*, Yukun Cheng, Xiaotie Deng,
                 Wenhan Huang, Jichen Li, Hongyi Ling* and Mengqian Zhang<br />
                 accepted to <strong class="pub">ICDCS 2021</strong><br />
@@ -120,15 +107,16 @@
                     2002.06852</a>
             </p>
             <p>
-                <strong class="pub">CycLedger: A Scalable and Secure Parallel Protocol for Distributed Ledger via Sharding</strong><br />
-                Mengqian Zhang*, Jichen Li*, <strong class="pub">Zhaohua Chen</strong>*, Hongyin Chen* and Xiaotie Deng<br />
+                <strong class="pub">CycLedger: A Scalable and Secure Parallel Protocol for Distributed Ledger via
+                    Sharding</strong><br />
+                Mengqian Zhang*, Jichen Li*, <strong class="pub">Zhaohua Chen</strong>*, Hongyin Chen* and Xiaotie
+                Deng<br />
                 accepted to <strong class="pub">IPDPS 2021</strong> (Best paper nominee)<br />
                 doi: <a href="https://doi.org/10.1109/IPDPS47924.2020.00045" target="_blank">
                     10.1109/IPDPS47924.2020.00045</a><br />
                 Arxiv: <a href="https://arxiv.org/pdf/2001.06778.pdf" target="_blank">
                     2001.06778</a>
             </p>
-            <br />
         </section>
         <section>
             <header>
@@ -140,7 +128,6 @@
             <p>
                 Journal Reviewing: SIAM Journal on Computing
             </p>
-            <br />
         </section>
         <section>
             <header>
@@ -150,25 +137,21 @@
                 I indulge in billiards.
                 Billiards is like breath to me.
                 I am now in the billiards team of Peking University.
-                I love snooker, of course. 
+                I love snooker, of course.
                 My favorite player is Kyren Wilson.
-            </p>
-            <p>
+                <br />
                 I am a super fan of SC30, KT11, and Golden State Warriors.
                 However, due to ankle injury, I have to give up high-intensity basketball.
-            </p>
-            <p>
+                <br />
                 I also play shuttlecock.
-            </p> 
-            <p>
-                I love guitar. I began playing guitar as I was deeply impressed by 
-                Jonathan Lee (李宗盛) and Tayu Lo (罗大佑). I learned to play some 
-                Kotaro Oshio's music when getting started. 
+                <br />
+                I love guitar. I began playing guitar as I was deeply impressed by
+                Jonathan Lee (李宗盛) and Tayu Lo (罗大佑). I learned to play some
+                Kotaro Oshio's music when getting started.
                 Nevertheless, due to the increasing work and pressure,
-                I haven't played guitar for two years or so.       
-            </p>               
-            <br />
-        </section>       
+                I haven't played guitar for two years or so.
+            </p>
+        </section>
     </main>
 </body>
 
