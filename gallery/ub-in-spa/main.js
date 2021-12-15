@@ -4,12 +4,13 @@ let expectedPaymentArray = [];
 let expectedRevenueArray = [];
 let rosArray = [];
 let data = [];
+let batchSize = 901;
 
 let width = window.innerWidth;
-let height = 600;
+let height = 700;
 let padding = {
     top: 50, right: 0.1 * width,
-    bottom: 50, left: 0.1 * width
+    bottom: 150, left: 0.1 * width
 };
 let surplus = 5
 
@@ -37,7 +38,7 @@ function plot() {
         // .attr("width", width)
         // .attr("height", height);
         .attr("preserveAspectRatio", "xMidYMid meet")
-        .attr("viewBox", "0 0 " + width + " " + height);
+        .attr("viewBox", [0, 0, width, height]);
 
     let xAxis = d3.axisBottom()
         .scale(xScale)
@@ -82,7 +83,7 @@ function plot() {
         .attr('class', 'line')
         .attr('id', 'lineW')
         .attr('transform', 'translate(' + padding.left + ',' + padding.top + ')')
-        .attr('d', lineW(data))
+        .attr('d', lineW(data.slice(0, batchSize)))
         .attr('fill', 'none')
         .attr('stroke-width', 3)
         .attr('stroke', colors[0]);
@@ -91,7 +92,7 @@ function plot() {
         .attr('class', 'line')
         .attr('id', 'lineP')
         .attr('transform', 'translate(' + padding.left + ',' + padding.top + ')')
-        .attr('d', lineP(data))
+        .attr('d', lineP(data.slice(0, batchSize)))
         .attr('fill', 'none')
         .attr('stroke-width', 3)
         .attr('stroke', colors[1]);
@@ -100,7 +101,7 @@ function plot() {
         .attr('class', 'line')
         .attr('id', 'lineR')
         .attr('transform', 'translate(' + padding.left + ',' + padding.top + ')')
-        .attr('d', lineR(data))
+        .attr('d', lineR(data.slice(0, batchSize)))
         .attr('fill', 'none')
         .attr('stroke-width', 3)
         .attr('stroke', colors[2]);
@@ -148,13 +149,13 @@ function plot() {
 
     let xLabel = d3.select("svg")
         .append("g")
-        .attr("class", "label")
+        .attr("class", "label");
     let yLabel = d3.select("svg")
         .append("g")
-        .attr("class", "label")
+        .attr("class", "label");
 
     xLabelKey = ["bidding factor α"];
-    yLabelKey = ["value"]
+    yLabelKey = ["value"];
 
     xLabel.selectAll("nothing")
         .data(xLabelKey)
@@ -173,7 +174,7 @@ function plot() {
         .join("text")
         .attr("id", "yLabel")
         .attr("x", padding.left - 100)
-        .attr("y", height / 2)
+        .attr("y", padding.top + (height - padding.top - padding.bottom) / 2)
         .text((d) => { return d; })
         .style("fill", "black")
         .style("font-size", "22px")
@@ -186,16 +187,79 @@ function plot() {
         getBoundingClientRect().width;
     let xTranslateLabelX = width / 2 - xLabelWidth / 2 - xLabelX;
     xLabel.attr("transform", "translate(" + xTranslateLabelX + ', 0)');
-    
+
     let yLabelX = yLabel.node().
-    getBoundingClientRect().x;
+        getBoundingClientRect().x;
     let yLabelWidth = yLabel.node().
-    getBoundingClientRect().width;
+        getBoundingClientRect().width;
     let yLabelCenter = yLabelX + yLabelWidth / 2;
-    yLabel.attr("transform", 
-    "rotate(-90, " + 
-    (yLabelCenter) + ", " + 
-    (height / 2) + ")")
+    yLabel.attr("transform",
+        "rotate(-90, " +
+        (yLabelCenter) + ", " +
+        (padding.top + (height - padding.top - padding.bottom) / 2) + ")")
+
+
+    let sld = d3.sliderHorizontal()
+        .min(2)
+        .max(10)
+        .ticks(9)
+        .default(2)
+        .step(1)
+        .width(width / 2);
+
+    let slider = svg.append("g")
+        .attr("class", "slider");
+
+    slider.call(sld);
+
+    let sliderWidth = slider.node().
+        getBoundingClientRect().width;
+    let sliderX = slider.node().
+        getBoundingClientRect().x;
+
+    slider.attr("transform", "translate("
+        + (width / 2 - sliderWidth / 2 - sliderX)
+        + ", " + (height - padding.bottom / 2) + ")");
+
+    slider.selectAll("text")
+        .style("font-size", "20px")
+        .style("font-family", "Cambay");
+
+    let sliderLabel = d3.select("svg")
+        .append("g")
+        .attr("class", "label");
+
+    sliderKey = ["n"];
+    sliderLabel.selectAll("nothing")
+        .data(sliderKey)
+        .join("text")
+        .attr("id", "sliderLabel")
+        .attr("x", width / 2)
+        .attr("y", height - padding.bottom * 3 / 4)
+        .text((d) => { return d; })
+        .style("fill", "black")
+        .style("font-size", "22px")
+        .style("font-family", "Cambay")
+        .style("alignment-baseline", "central");
+
+    let sliderLabelWidth = sliderLabel.node().
+        getBoundingClientRect().width;
+    let sliderLabelX = sliderLabel.node().
+        getBoundingClientRect().x;
+
+    sliderLabel.attr("transform", "translate("
+        + (width / 2 - sliderLabelWidth / 2 - sliderLabelX)
+        + ", 0)");
+
+    sld.on("onchange", () => {
+        let nowN = sld.value();
+        svg.select("#lineW")
+            .attr('d', lineW(data.slice((nowN - 2) * batchSize, (nowN - 1) * batchSize)));
+        svg.select("#lineP")
+            .attr('d', lineP(data.slice((nowN - 2) * batchSize, (nowN - 1) * batchSize)));
+        svg.select("#lineR")
+            .attr('d', lineR(data.slice((nowN - 2) * batchSize, (nowN - 1) * batchSize)));
+    });
 
 }
 
