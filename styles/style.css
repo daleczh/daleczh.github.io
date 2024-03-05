@@ -5,6 +5,7 @@ html {
 
 body {
     width: 60%;
+    min-width: 420px;
     margin: 0 auto;
 }
 
@@ -24,14 +25,14 @@ button {
 div#photo {
     float: right; 
     text-align: right; 
-    /* margin: 5%;  */
     margin-top: 0px;
 }
 
 div#photo img {
-    width: 360px;
-    margin: 3%;
-    max-width: 94%;
+    width: 450px;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 80%;
 }
 
 header#main-title h1{
