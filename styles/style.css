@@ -3,6 +3,11 @@ html {
     font-family: 'Cambay', sans-serif;
 }
 
+body {
+    width: 60%;
+    margin: 0 auto;
+}
+
 button {
     font-size: 18px;
     font-family: 'Cambay', sans-serif;
@@ -14,6 +19,19 @@ button {
     padding-right: 12px;
     border-color: rgb(34, 21, 119);
     border-radius: 2px;
+}
+
+div#photo {
+    float: right; 
+    text-align: right; 
+    /* margin: 5%;  */
+    margin-top: 0px;
+}
+
+div#photo img {
+    width: 360px;
+    margin: 3%;
+    max-width: 94%;
 }
 
 header#main-title h1{
@@ -67,7 +85,10 @@ a:visited {
 }
 
 nav {
-    font-size: 22px;
+    font-size: 20px;
+    /* position: fixed; */
+    top: 10%;
+    left: 2%;
 }
 
 nav ul.main-nav {    
@@ -91,8 +112,9 @@ nav ul.main-nav li:hover ul.sub-nav li{
     display: block;
 }
 
-div.end-nav {
-    padding-top: 25px;
-    padding-bottom: 25px;
+div.start {
+    padding-top: 10px;
+    padding-bottom: 10px;
     clear: left;
 }
+

@@ -3,8 +3,8 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-const width = canvas.width = window.innerWidth;
-const height = canvas.height = window.innerHeight * 2 / 3;
+const width = canvas.width = document.body.offsetWidth;
+const height = canvas.height = document.body.offsetWidth * 2.8 / 5;
 
 // 生成随机数的函数
 
