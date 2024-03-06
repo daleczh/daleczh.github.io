@@ -25,7 +25,7 @@ function miscSetUserName() {
     }
     else {
         localStorage.setItem('yourName', yourName);
-        miscHeading.textContent = miscOriginalHeadingContext + ' welcomes ' + yourName + ' to his misc!';
+        miscHeading.textContent = miscOriginalHeadingContext + ' welcomes ' + yourName + ' to his miscalleny!';
     }
 }
 
