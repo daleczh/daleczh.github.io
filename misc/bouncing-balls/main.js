@@ -3,8 +3,21 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-width = canvas.width = document.body.offsetWidth * 0.7;
-height = canvas.height = document.body.offsetWidth * 0.7 / 2;
+let maxWidth = window.innerWidth;
+let maxHeight = window.innerHeight;
+let width = canvas.width = document.body.offsetWidth * 0.9;
+let height = 0
+if (maxHeight >= maxWidth * 1.35 + 180) {
+  height = canvas.height = width * 2;
+}
+else if (maxHeight >= maxWidth * 0.75 + 180){
+  height = canvas.height = width;
+}
+else {
+  height = canvas.height = width / 2;
+}
+
+
 
 canvas.style.position = 'absolute';
 canvas.style.left = '50%';
@@ -76,9 +89,17 @@ Ball.prototype.collisionDetect = function () {
 }
 
 let balls = [];
+let numBalls = 25;
+let minSize = 12;
+let maxSize = 20;
+if (maxWidth <= 500) {
+  numBalls = 12;
+  minSize = 8;
+  maxSize = 14;
+}
 
-while (balls.length < 50) {
-  let size = random(10, 20);
+while (balls.length < numBalls) {
+  let size = random(minSize, maxSize);
   let ball = new Ball(
     // 为避免绘制错误，球至少离画布边缘球本身一倍宽度的距离
     random(0 + size, width - size),
@@ -92,8 +113,19 @@ while (balls.length < 50) {
 }
 
 function loop() {
-  width = canvas.width = document.body.offsetWidth * 0.7;
-  height = canvas.height = document.body.offsetWidth * 0.7 / 2;
+  maxWidth = window.innerWidth;
+  maxHeight = window.innerHeight;
+  width = canvas.width = document.body.offsetWidth * 0.9;
+  if (maxHeight >= maxWidth * 1.2 + 180) {
+    height = canvas.height = width * 2;
+  }
+  else if (maxHeight >= maxWidth * 0.75 + 180){
+    height = canvas.height = width;
+  }
+  else {
+    height = canvas.height = width / 2;
+  }
+
   canvas.style.position = 'absolute';
   canvas.style.left = '50%';
   canvas.style.transform = 'translate(-50%, 0)';

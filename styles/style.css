@@ -92,30 +92,31 @@ nav {
 }
 
 nav ul.main-nav {    
-    text-align: center;
+    text-align: left;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
 }
 
 nav ul.main-nav li {
     float: left;
     list-style: none;
     width: 250px;
+    padding-right: 50px;
 }
 
 nav ul.main-nav li ul.sub-nav li{
     text-align: left;
     list-style: disc;
-    padding-left: 90px;
+    padding-left: 20px;
     display: none;
 }
 
 nav ul.main-nav li:hover ul.sub-nav li{
     text-align: left;
     list-style: disc;
-    padding-left: 90px;
+    padding-left: 20px;
     display: block;
 }
 
@@ -125,4 +126,7 @@ div.start {
     clear: left;
 }
 
+canvas {
+    padding-bottom: 80px;
+}
 
