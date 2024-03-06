@@ -87,14 +87,16 @@ a:visited {
 
 nav {
     font-size: 20px;
-    /* position: fixed; */
     top: 10%;
     left: 2%;
 }
 
 nav ul.main-nav {    
+    text-align: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul.main-nav li {
@@ -104,12 +106,16 @@ nav ul.main-nav li {
 }
 
 nav ul.main-nav li ul.sub-nav li{
+    text-align: left;
     list-style: disc;
+    padding-left: 90px;
     display: none;
 }
 
 nav ul.main-nav li:hover ul.sub-nav li{
+    text-align: left;
     list-style: disc;
+    padding-left: 90px;
     display: block;
 }
 

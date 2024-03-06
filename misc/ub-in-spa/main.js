@@ -263,7 +263,7 @@ function plot() {
 
 }
 
-d3.csv("/gallery/ub-in-spa/data.csv", (dataRow) => {
+d3.csv("/misc/ub-in-spa/data.csv", (dataRow) => {
     return {
         alpha: +dataRow.alpha,
         eW: +dataRow.expectedWelfare,
