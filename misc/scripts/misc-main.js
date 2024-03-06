@@ -11,7 +11,7 @@ $(document).ready(function () {
         miscHeading = document.querySelector('header#main-title h1');
         miscOriginalHeadingContext = miscHeading.textContent;
         if (yourName !== null) {
-            miscHeading.textContent = miscOriginalHeadingContext + ' welcomes ' + yourName + ' to his misc!';
+            miscHeading.textContent = miscOriginalHeadingContext + ' welcomes ' + yourName + ' to his miscalleny!';
         }
     });
     $("nav").load("/navi.html");
