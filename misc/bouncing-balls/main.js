@@ -3,8 +3,12 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-const width = canvas.width = document.body.offsetWidth;
-const height = canvas.height = document.body.offsetWidth * 2.8 / 5;
+width = canvas.width = document.body.offsetWidth * 0.7;
+height = canvas.height = document.body.offsetWidth * 0.7 / 2;
+
+canvas.style.position = 'absolute';
+canvas.style.left = '50%';
+canvas.style.transform = 'translate(-50%, 0)';
 
 // 生成随机数的函数
 
@@ -14,10 +18,10 @@ function random(min, max) {
 }
 
 function randomColor() {
-  return 'rgb(' +
-    random(0, 255) + ', ' +
-    random(0, 255) + ', ' +
-    random(0, 255) + ')';
+  return 'rgba(' +
+    random(128, 255) + ', ' +
+    random(128, 255) + ', ' +
+    random(128, 255) + '0.75)';
 }
 
 function Ball(x, y, velX, velY, color, size) {
@@ -88,7 +92,12 @@ while (balls.length < 50) {
 }
 
 function loop() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+  width = canvas.width = document.body.offsetWidth * 0.7;
+  height = canvas.height = document.body.offsetWidth * 0.7 / 2;
+  canvas.style.position = 'absolute';
+  canvas.style.left = '50%';
+  canvas.style.transform = 'translate(-50%, 0)';
+  ctx.fillStyle = 'rgba(55, 157, 69, 1)';
   ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < balls.length; i++) {

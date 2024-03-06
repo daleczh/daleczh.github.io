@@ -11,7 +11,7 @@ $(document).ready(function () {
         heading = document.querySelector('header#main-title h1');
         originalHeadingContext = heading.textContent;
         if (yourName !== null) {
-            heading.textContent = originalHeadingContext + ' welcomes ' + yourName + ' !';
+            heading.textContent = originalHeadingContext + ' welcomes ' + yourName + '!';
         }
     });
     $("nav").load("/navi.html");
@@ -25,7 +25,7 @@ function setUserName() {
     }
     else {
         localStorage.setItem('yourName', yourName);
-        heading.textContent = originalHeadingContext + ' welcomes ' + yourName + ' !';
+        heading.textContent = originalHeadingContext + ' welcomes ' + yourName + '!';
     }
 }
 
