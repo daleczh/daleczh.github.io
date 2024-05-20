@@ -7,7 +7,7 @@ let maxWidth = window.innerWidth;
 let maxHeight = window.innerHeight;
 let width = canvas.width = document.body.offsetWidth * 0.9;
 let height = 0
-if (maxHeight >= maxWidth * 1.35 + 180) {
+if (maxHeight >= maxWidth * 1.25 + 180) {
   height = canvas.height = width * 2;
 }
 else if (maxHeight >= maxWidth * 0.75 + 180){
